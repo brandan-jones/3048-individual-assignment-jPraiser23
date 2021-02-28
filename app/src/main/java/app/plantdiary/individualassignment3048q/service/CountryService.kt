@@ -14,6 +14,7 @@ class CountryService {
         var _countries = MutableLiveData<ArrayList<Country>>()
         val service = RetrofitClientInstance.retrofitInstance?.create(IcountriesDAO::class.java)
         val call = service?.getAllCountries()
+        println(call.toString() + " 3")
 
         call?.enqueue(object: Callback<ArrayList<Country>> {
             /**
@@ -23,11 +24,14 @@ class CountryService {
              * Note: An HTTP response may still indicate an application-level failure such as a 404 or 500.
              * Call [Response.isSuccessful] to determine if the response indicates success.
              */
+
             override fun onResponse(
+
                 call: Call<ArrayList<Country>>,
                 response: Response<ArrayList<Country>>
             ) {
                 _countries.value = response.body()
+                println(response.body() )
             }
 
             /**
@@ -35,7 +39,8 @@ class CountryService {
              * exception occurred creating the request or processing the response.
              */
             override fun onFailure(call: Call<ArrayList<Country>>, t: Throwable) {
-                val j = 1 + 1
+                val j = 1 + 1;
+                val i = 1 + 1;
             }
 
         })

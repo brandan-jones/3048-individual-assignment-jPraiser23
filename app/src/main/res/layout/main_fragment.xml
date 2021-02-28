@@ -8,12 +8,15 @@
     tools:context=".ui.main.MainFragment">
 
     <AutoCompleteTextView
-        android:id="@+id/actCountry"
-        android:layout_width="0dp"
+        android:id="@+id/actCountryName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/country"
+        android:hint="Select a Country"
+        android:autoText="true"
         android:text="AutoCompleteTextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
